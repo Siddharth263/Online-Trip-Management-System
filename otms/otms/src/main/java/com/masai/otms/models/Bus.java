@@ -27,6 +27,6 @@ public class Bus {
     private Integer capacity;
 
     @ManyToOne
-    @JoinColumn(name = "routeId")
+    @JoinColumn(name = "route_id")
     private Route route;
 }
