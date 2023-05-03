@@ -1,9 +1,6 @@
 package com.masai.otms.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
@@ -28,4 +25,8 @@ public class Bus {
     private String busType;
 
     private Integer capacity;
+
+    @ManyToOne
+    @JoinColumn(name = "routeId")
+    private Route route;
 }
