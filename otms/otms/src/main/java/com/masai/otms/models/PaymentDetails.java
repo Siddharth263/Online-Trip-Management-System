@@ -4,6 +4,7 @@ import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 
 public class PaymentDetails {
+
     @NotNull(message = "Payment Type cannot be null")
     private String paymentType;
     @NotNull(message = "Gateway Type cannot be null")
