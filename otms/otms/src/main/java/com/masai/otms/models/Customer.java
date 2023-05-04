@@ -1,11 +1,10 @@
 package com.masai.otms.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -44,4 +43,7 @@ public class Customer {
     @Size(min = 13, max = 13, message = "Country Code(+91) + 10 digit Phone Number ")
     @Pattern(regexp = "^\\+91[1-9]\\d{9}$", message = "Format: +911234567809")
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Feedback> feedbacks;
 }
