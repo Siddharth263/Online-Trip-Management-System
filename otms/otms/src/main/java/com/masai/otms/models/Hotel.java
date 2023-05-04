@@ -1,13 +1,12 @@
 package com.masai.otms.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -47,4 +46,7 @@ public class Hotel {
     @NotNull(message = "Status Cannot be empty or blank or null")
     @Size(min = 3, max = 20, message = "Status should be 3 to 20 letters")
     private String status;
+
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
+    private Set<Customer> customers;
 }

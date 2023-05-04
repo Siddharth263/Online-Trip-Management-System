@@ -1,13 +1,11 @@
 package com.masai.otms.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Data
@@ -31,4 +29,10 @@ public class Booking {
 
     @FutureOrPresent(message = "Booking date must be in the future or present")
     private LocalDate bookingDate;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Package apackage;
+
+    @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
+    private Set<Customer> customers;
 }

@@ -44,6 +44,20 @@ public class Customer {
     @Pattern(regexp = "^\\+91[1-9]\\d{9}$", message = "Format: +911234567809")
     private String phoneNumber;
 
+
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Feedback> feedbacks;
+
+    @ManyToOne
+    @JoinColumn(name = "hotel_id")
+    private Hotel hotel;
+
+    @ManyToOne
+    @JoinColumn(name = "booking_id")
+    private Booking booking;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
+    private List<TicketDetails> ticketDetails;
+
 }
