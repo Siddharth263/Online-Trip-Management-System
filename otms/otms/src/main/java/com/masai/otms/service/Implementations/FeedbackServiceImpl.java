@@ -9,10 +9,12 @@ import com.masai.otms.repository.CustomerRepo;
 import com.masai.otms.repository.FeedbackRepo;
 import com.masai.otms.service.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class FeedbackServiceImpl implements FeedbackService {
     @Autowired
     CustomerRepo customerRepo;

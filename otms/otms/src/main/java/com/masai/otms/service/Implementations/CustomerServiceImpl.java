@@ -46,6 +46,8 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<Customer> viewAllCustomer() {
-        return cRepo.findAll();
+        List<Customer> list = cRepo.findAll();
+        if(!(list != null && list.size() == 0)) return list;
+        throw new CustomerException("No Data available to show");
     }
 }
