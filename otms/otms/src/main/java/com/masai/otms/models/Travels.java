@@ -1,8 +1,10 @@
 package com.masai.otms.models;
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -16,9 +18,15 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Data
+@Setter
+@Getter
+@NoArgsConstructor
 public class Travels {
 
     @Id

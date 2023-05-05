@@ -1,6 +1,6 @@
 package com.masai.otms.models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.*; 
 import jakarta.validation.constraints.*;
 import lombok.Data;
 import org.hibernate.validator.internal.IgnoreForbiddenApisErrors;
@@ -59,14 +59,10 @@ public class Package {
     
     
     
-    
-    
-    
-    
 
 
     @OneToOne(mappedBy = "apackage")
-    private Booking booking;
+    private Booking bookings;
 
     @OneToMany(mappedBy = "aPackage", cascade = CascadeType.ALL)
     private Set<Travels> travels;

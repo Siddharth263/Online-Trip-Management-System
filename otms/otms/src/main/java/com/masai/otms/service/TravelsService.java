@@ -7,7 +7,7 @@ import com.masai.otms.models.Travels;
 
 public interface TravelsService {
 	
-   public Travels addTravels(Travels travel , Integer travelId) throws TravelException;
+   public Travels addTravels(Travels travel) throws TravelException;
 	
 	public Travels updateTravels(Travels travel,Integer travelId) throws TravelException;
 
@@ -18,4 +18,6 @@ public interface TravelsService {
 	public List<Travels> viewTravels() throws TravelException;
 	
 	
+	//extra
+//	public Travels getTravelsById(Integer travelId) throws TravelException;
 }
