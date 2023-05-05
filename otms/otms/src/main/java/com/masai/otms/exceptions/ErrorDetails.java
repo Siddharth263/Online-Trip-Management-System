@@ -1,6 +1,9 @@
 package com.masai.otms.exceptions;
 
-import lombok.Data;
+import lombok.Data; 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
@@ -9,4 +12,7 @@ public class ErrorDetails {
     private String message;
     private LocalDateTime timeStamp;
     private String uri;
+    
+    
+    
 }
