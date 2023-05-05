@@ -40,9 +40,35 @@ public class Package {
     @Embedded
     private PaymentDetails paymentDetails;
 
+    
+    
+    
+    
+    //Relationship between booking and package
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private Booking booking;
+    
+    
+    
+    
+    //Relationship between Travel and package
+    @ManyToOne
+    @JoinColumn(name="travelId")
+    private Travels travel;
+    
+    
+    
+    
+    
+    
+    
+
+
     @OneToOne(mappedBy = "apackage")
     private Booking booking;
 
     @OneToMany(mappedBy = "aPackage", cascade = CascadeType.ALL)
     private Set<Travels> travels;
+
 }
