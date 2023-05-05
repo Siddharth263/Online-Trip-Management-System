@@ -5,6 +5,8 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 import org.hibernate.validator.internal.IgnoreForbiddenApisErrors;
 
+import java.util.Set;
+
 @Entity
 @Data
 public class Package {
@@ -37,6 +39,7 @@ public class Package {
     @NotNull(message = "Payment Details cannot be null")
     @Embedded
     private PaymentDetails paymentDetails;
+
     
     
     
@@ -60,4 +63,12 @@ public class Package {
     
     
     
+
+
+    @OneToOne(mappedBy = "apackage")
+    private Booking booking;
+
+    @OneToMany(mappedBy = "aPackage", cascade = CascadeType.ALL)
+    private Set<Travels> travels;
+
 }

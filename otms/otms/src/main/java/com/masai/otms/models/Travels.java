@@ -1,5 +1,6 @@
 package com.masai.otms.models;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +10,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+
+import jakarta.persistence.*;
+
 import jakarta.validation.constraints.*;
 
 import lombok.Data;
@@ -45,6 +49,7 @@ public class Travels {
     @Size(min = 13, max = 13, message = "Country Code(+91) + 10 digit Phone Number ")
     @Pattern(regexp = "^\\+91[1-9]\\d{9}$", message = "Format: +911234567809")
     private String phoneNumber;
+
     
     
    
@@ -55,4 +60,10 @@ public class Travels {
     private List<Package> pkglist = new ArrayList<>();
     
     
+
+
+    @ManyToOne
+    @JoinColumn(name = "package_id")
+    private Package aPackage;
+
 }

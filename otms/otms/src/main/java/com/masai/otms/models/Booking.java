@@ -1,5 +1,6 @@
 package com.masai.otms.models;
 
+
 import jakarta.persistence.CascadeType; 
 import jakarta.persistence.Entity; 
 import jakarta.persistence.GeneratedValue;
@@ -8,14 +9,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
+
+import jakarta.persistence.*;
+
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.util.Set;
+
 
 @Entity
 @Data
@@ -41,6 +49,7 @@ public class Booking {
 
     @FutureOrPresent(message = "Booking date must be in the future or present")
     private LocalDate bookingDate;
+
     
     
     
@@ -48,6 +57,14 @@ public class Booking {
     private Package pkg ;
     
 	
+
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Package apackage;
+
+    @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
+    private Set<Customer> customers;
+
 }
 
 

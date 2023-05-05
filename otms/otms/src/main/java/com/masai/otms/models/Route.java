@@ -1,9 +1,6 @@
 package com.masai.otms.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -11,6 +8,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.xml.transform.sax.SAXTransformerFactory;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -54,4 +53,7 @@ public class Route {
     @NotNull(message = "Fare cannot be null")
     @DecimalMin(value = "0.0", inclusive = false, message = "Fare should be greater than 0.0")
     private Double fare;
+
+    @OneToMany(mappedBy = "route", cascade = CascadeType.ALL)
+    private List<Bus> buses;
 }
