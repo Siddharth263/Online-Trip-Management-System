@@ -14,6 +14,9 @@ import jakarta.persistence.*;
 
 import jakarta.validation.constraints.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
@@ -27,6 +30,9 @@ import java.util.Set;
 
 @Entity
 @Data
+@Setter
+@Getter
+@NoArgsConstructor
 public class Booking {
 
     @Id
@@ -62,7 +68,7 @@ public class Booking {
     @OneToOne(cascade = CascadeType.ALL)
     private Package apackage;
 
-    @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "bookings", cascade = CascadeType.ALL)
     private Set<Customer> customers;
 
 }
