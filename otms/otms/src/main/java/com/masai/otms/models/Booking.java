@@ -68,7 +68,7 @@ public class Booking {
     @OneToOne(cascade = CascadeType.ALL)
     private Package apackage;
 
-    @OneToMany(mappedBy = "bookings", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
     private Set<Customer> customers;
 
 }

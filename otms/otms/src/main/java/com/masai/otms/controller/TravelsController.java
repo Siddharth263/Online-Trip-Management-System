@@ -22,11 +22,11 @@ import jakarta.validation.Valid;
 
 @RestController
 @CrossOrigin("*")
-
 public class TravelsController {
 	
 	@Autowired
 	private TravelsService travelservice;
+
 	@PostMapping("/addTravels")
 	public ResponseEntity<Travels> Addtravelshandler(@Valid @RequestBody Travels travel){
 	Travels addTravel = travelservice.addTravels(travel);
