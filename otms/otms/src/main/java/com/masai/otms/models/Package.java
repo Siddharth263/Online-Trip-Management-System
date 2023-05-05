@@ -37,4 +37,27 @@ public class Package {
     @NotNull(message = "Payment Details cannot be null")
     @Embedded
     private PaymentDetails paymentDetails;
+    
+    
+    
+    
+    //Relationship between booking and package
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private Booking booking;
+    
+    
+    
+    
+    //Relationship between Travel and package
+    @ManyToOne
+    @JoinColumn(name="travelId")
+    private Travels travel;
+    
+    
+    
+    
+    
+    
+    
 }

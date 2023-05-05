@@ -1,13 +1,21 @@
 package com.masai.otms.models;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.CascadeType; 
+import jakarta.persistence.Entity; 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Data
@@ -22,6 +30,8 @@ public class Booking {
     @NotBlank(message = "Booking Type Cannot be empty or blank or null")
     @Size(min = 3, max = 20, message = "Booking Type should be 3 to 20 letters")
     private String bookingType;
+    
+    private String description;
 
     @NotNull(message = "Booking Title Cannot be empty or blank or null")
     @NotEmpty(message = "Booking Title Cannot be empty or blank or null")
@@ -31,4 +41,16 @@ public class Booking {
 
     @FutureOrPresent(message = "Booking date must be in the future or present")
     private LocalDate bookingDate;
+    
+    
+    
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "booking")
+    private Package pkg ;
+    
+	
 }
+
+
+    
+    
+

@@ -1,6 +1,6 @@
 package com.masai.otms.exceptions;
 
-import org.springframework.http.HttpStatus; 
+import org.springframework.http.HttpStatus;  
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -23,6 +23,9 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(ed, HttpStatus.BAD_REQUEST);
     }
 
+    
+    
+    
     @ExceptionHandler(NoHandlerFoundException.class)
     public ResponseEntity<ErrorDetails> noHandlerFoundException(NoHandlerFoundException ne, WebRequest req) {
         ErrorDetails ed = new ErrorDetails();
