@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Ticket</title>
+</head>
+
+<body>
+  <div class="form">
+    <h2>Booking Form</h2>
+    <form>
+      <label for="bookingDate">Booking Date:</label>
+      <input type="date" id="bookingDate" name="bookingDate"><br>
+
+      <!-- booking name would be same as package name -->
+      <label for="bookingTitle">Package name:</label>
+      <input type="text" id="bookingTitle" name="bookingTitle"><br>
+
+      <label for="bookingType">Booking Type:</label>
+      <select id="bookingType" name="bookingType">
+        <option value="hotel">Hotel</option>
+      </select><br>
+
+      <label for="packageId">Package ID:</label>
+      <input type="text" id="packageId" name="packageId"><br>
+
+      <!-- Once customer clicks on submit, create a ticket and put status pending, and show an 
+        alert message with ticket id, and booking id, with status: Waiting for confirmation from hotel
+      do it in js: @Amanastel -->
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+
+</html>
