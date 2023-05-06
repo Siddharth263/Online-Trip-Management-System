@@ -1,8 +1,12 @@
 package com.masai.otms.repository;
 
-import com.masai.otms.models.Admin;
-import com.masai.otms.models.User;
+import com.masai.otms.models.Customer;
+import com.masai.otms.models.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends JpaRepository<User, Integer> {
+import java.util.Optional;
+
+public interface UserRepo extends JpaRepository<Users, Integer> {
+    public Optional<Users> findByUserType(String userType);
+
 }

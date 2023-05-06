@@ -1,8 +1,5 @@
 package com.masai.otms.models;
 
-import java.time.LocalDate;
-import java.util.Set;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,8 +15,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-public class User {
-
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer userId;
@@ -31,6 +27,8 @@ public class User {
     private String userType;
 
     @NotNull(message = "Password is required")
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$", message = "Password must be at least 8 characters long, and contain at least one uppercase letter, one lowercase letter, one digit, and one special character")
+//    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$", message = "Password must be at least 8 characters long, and contain at least one uppercase letter, one lowercase letter, one digit, and one special character")
     private String userPassword;
+
+
 }
