@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Configuration
 public class AppConfig {
@@ -17,6 +18,7 @@ public class AppConfig {
 		http.authorizeHttpRequests()
                 .requestMatchers(HttpMethod.POST, "/customers").permitAll()
                 .requestMatchers(HttpMethod.POST, "/users").permitAll()
+                .requestMatchers(HttpMethod.POST, "/routes").permitAll()
                 .anyRequest()
 				.authenticated()
                 .and()
