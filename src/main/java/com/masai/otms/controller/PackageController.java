@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,16 +34,16 @@ public class PackageController {
 	}
 
 	@DeleteMapping("/packagess/{packageId}")
-	public ResponseEntity<Packages> deletePackageByIdHandler(@RequestBody Integer packageId) throws PackageException {
+	public ResponseEntity<Packages> deletePackageByIdHandler(@PathVariable @RequestBody Integer packageId) throws PackageException {
 
 		return new ResponseEntity<>(packagSer.deletePackageById(packageId),HttpStatus.OK);
 	}
 
 	@GetMapping("/packagess/{packageId}")
-	public ResponseEntity<List<Packages>> searchPackageByIdHandler(Integer packageId) throws PackageException {
+	public ResponseEntity<List<Packages>> searchPackageByIdHandler(@PathVariable String packageName) throws PackageException {
 	
 		
-		return new ResponseEntity<>(packagSer.searchPackageById(packageId),HttpStatus.OK);
+		return new ResponseEntity<>(packagSer.searchPackageByName(packageName),HttpStatus.OK);
 		
 	}
 
