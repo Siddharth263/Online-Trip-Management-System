@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cancel Ticket</title>
+</head>
+<body>
+  <div class="cancel-ticket">
+    <h1>Cancel Ticket</h1>
+		<form method="POST" action="#">
+			<label for="ticket-id">Enter Ticket Id: </label>
+			<input type="text" id="ticket-id" name="ticket-id" required><br><br>
+      <label for="booking-id">Enter Booking Id: </label>
+			<input type="text" id="booking-id" name="booking-id" required><br><br>
+
+      <!-- once customer clicks on submit remove both the booking and ticket with inputed 
+        do it in js: id @Amanastel -->
+			<button type="submit">Submit</button>
+		</form>
+  </div>
+</body>
+</html>
