@@ -1,15 +1,12 @@
 package com.masai.otms.service.Implementations;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import com.masai.otms.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.masai.otms.exceptions.BookingException;
 import com.masai.otms.models.Booking;
-import com.masai.otms.models.User;
 import com.masai.otms.repository.BookingRepo;
 import com.masai.otms.repository.PackageRepo;
 import com.masai.otms.repository.UserRepo;
