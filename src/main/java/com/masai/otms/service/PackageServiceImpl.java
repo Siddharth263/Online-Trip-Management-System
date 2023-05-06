@@ -33,9 +33,9 @@ Optional<Packages>  pkg= packageRepo.findById(packageId);
 	}
 
 	@Override
-	public List<Packages> searchPackageById(Integer packageId) throws PackageException {
+	public List<Packages> searchPackageByName(String packageName) throws PackageException {
 		// TODO Auto-generated method stub
-		List<Packages> packageList= packageRepo.viewAllPackagesById(packageId);
+		List<Packages> packageList= packageRepo.viewAllPackagesByName(packageName);
 		if(packageList.isEmpty())  throw new PackageException("Package not found");
 		
 		return packageList;
