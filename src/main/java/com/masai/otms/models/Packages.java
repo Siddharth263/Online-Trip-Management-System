@@ -6,7 +6,7 @@ import lombok.Data;
 import org.hibernate.validator.internal.IgnoreForbiddenApisErrors;
 
 @Entity
-@Data
+//@Data
 public class Packages {
 
     @Id
@@ -86,12 +86,7 @@ public class Packages {
 		this.paymentDetails = paymentDetails;
 	}
 
-	@Override
-	public String toString() {
-		return "Packages [packageId=" + packageId + ", packageName=" + packageName + ", description=" + description
-				+ ", packageType=" + packageType + ", paymentCost=" + paymentCost + ", paymentDetails=" + paymentDetails
-				+ "]";
-	}
+	
 
 	
     

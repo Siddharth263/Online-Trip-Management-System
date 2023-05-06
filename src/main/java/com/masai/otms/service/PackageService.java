@@ -10,7 +10,7 @@ public interface PackageService {
 	
 	public Packages addPackage(Packages packag) throws PackageException;
 	public Packages deletePackageById(Integer packageId) throws PackageException;
-	public List<Packages> searchPackageById(Integer packageId) throws PackageException;
+	public List<Packages> searchPackageByName(String packageName) throws PackageException;
 	
 	public List<Packages> viewAllPackages () throws PackageException;
 }
