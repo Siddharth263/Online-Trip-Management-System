@@ -46,9 +46,9 @@ public class BookingController {
 	
 
 	@GetMapping("/getbookings/{bookingId}")
-	public ResponseEntity<List<Booking>> viewBookingsHandler(@Valid @PathVariable Integer bookingId) throws BookingException {
+	public ResponseEntity<Booking> viewBookingsHandler(@Valid @PathVariable Integer bookingId) throws BookingException {
 
-	       List<Booking> viewbookings = bookingService.viewBookings(bookingId);
+	       Booking viewbookings = bookingService.viewBookings(bookingId);
 		   
 		   return new ResponseEntity<>(viewbookings,HttpStatus.OK);
 	}

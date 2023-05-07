@@ -1,7 +1,7 @@
 package com.masai.otms.service.Implementations;
 
 import java.util.ArrayList;
-import java.util.List; 
+import java.util.List;
 import java.util.Optional;
 
 import com.masai.otms.service.BookingService;
@@ -82,15 +82,11 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public List<Booking> viewBookings(Integer bookingId) throws BookingException {
+    public Booking viewBookings(Integer bookingId) throws BookingException {
 
-    	List<Booking> bookinglist = bookRepo.viewBookingById(bookingId);
-    	if(bookinglist.isEmpty()) {
-    		throw new BookingException("No Booking found with id " + bookingId);
-    	}
+    	Optional<Booking> bookinglist = bookRepo.findById(bookingId);
     	
-    	
-		return bookinglist;
+		return bookinglist.orElseThrow(()-> new BookingException("Booking ID invalid"));
     	
     	
     	
