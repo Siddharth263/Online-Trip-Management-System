@@ -3,12 +3,19 @@ package com.masai.otms.models;
 import jakarta.persistence.*; 
 import jakarta.validation.constraints.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import org.hibernate.validator.internal.IgnoreForbiddenApisErrors;
 
 import java.util.Set;
 
 @Entity
 @Data
+@NoArgsConstructor
+@Getter
+@Setter
 public class Package {
 
     @Id
