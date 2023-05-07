@@ -21,7 +21,7 @@ import com.masai.otms.service.TravelsService;
 import jakarta.validation.Valid;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class TravelsController {
 	
 	@Autowired

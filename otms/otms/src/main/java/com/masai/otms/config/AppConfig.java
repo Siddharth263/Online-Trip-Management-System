@@ -4,8 +4,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -19,8 +24,9 @@ public class AppConfig {
                 .requestMatchers(HttpMethod.POST, "/customers").permitAll()
                 .requestMatchers(HttpMethod.POST, "/users").permitAll()
                 .requestMatchers(HttpMethod.POST, "/routes").permitAll()
+                .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest()
-				.authenticated()
+                .authenticated()
                 .and()
                 .csrf().disable()
                 .formLogin()
@@ -37,5 +43,13 @@ public class AppConfig {
 		return new BCryptPasswordEncoder();
 
 	}
+
+    @Bean
+    public UserDetailsService userDetailsService(){
+
+        UserDetails adminUser = User.withUsername("aman").password(passwordEncoder().encode("aman")).roles("ADMIN").build();
+
+        return new InMemoryUserDetailsManager(adminUser);
+    }
 
 }
