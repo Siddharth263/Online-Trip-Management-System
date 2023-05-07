@@ -24,7 +24,7 @@ import jakarta.validation.Valid;
 public class BookingController {
 	
 	@Autowired
-	 private BookingService bookingService;
+	private BookingService bookingService;
 	 	 
 	@PostMapping("/bookings")
 	public ResponseEntity<Booking> makeBookingHandler(@Valid @RequestBody Booking booking) throws BookingException {
