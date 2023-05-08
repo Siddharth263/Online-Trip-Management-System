@@ -5,32 +5,19 @@ body {
     background: linear-gradient(to bottom, #00b4db, #0083b0);
   }
 
-.form{
-    /* background-color: rgb(202, 245, 244); */
-    background-color:  #00b4db;
+
+.feedback-table{
+    background-color: #00b4db;
     width: 500px;
     height: 350px;
     margin-left: 380px;
     margin-top: 50px;
     /* text-align: center; */
     justify-content: center;
-    padding: 20px 10px 10px 80px  ;
+    padding: 20px 70px 20px 80px  ;
 }
 
-#btn{
-    justify-content: center;
-    margin-left: 4px;
-    margin-top: 20px;
-    
-   
-
-}
-
-#color{
-    background-color: #0083b0;
-    border-radius: 10px;
-    width:130px ;
+.col{
+    width: 200px;
     height: 50px;
-    font-size: 25px;
-    color: white;
 }
