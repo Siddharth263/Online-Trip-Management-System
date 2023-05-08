@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Add Travel and Package Details</title>
+  <link rel="stylesheet" href="../adminPagesCSS/addTravelsOrPackage.css">
+</head>
+<body>
+  <div class="container">
+    <div class="column">
+      <h2>Add Travel Details</h2>
+    <form class="travel-form">
+      <div>
+        <label for="travelName">Travel Name:</label>
+        <input type="text" id="travelName" name="travelName" class="travel-control">
+      </div>
+      <div>
+        <label for="representativeName">Representative Name:</label>
+        <input type="text" id="representativeName" name="representativeName" class="travel-control">
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" class="travel-control">
+      </div>
+      <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" class="travel-control">
+      </div>
+      <button type="submit">Add Travel</button>
+    </form>
+    </div>
+  
+    <div class="column">
+      <h2>Add Package Details</h2>
+    <form class="package-form">
+      <div>
+        <label for="packageName">Package Name:</label>
+        <input type="text" id="packageName" name="packageName" class="package-control">
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" class="package-control"></textarea>
+      </div>
+      <div>
+        <label for="packageType">Package Type:</label>
+        <input type="text" id="packageType" name="packageType" class="package-control">
+      </div>
+      <div>
+        <label for="paymentCost">Payment Cost:</label>
+        <input type="text" id="paymentCost" name="paymentCost" class="package-control">
+      </div>
+  
+      <div>
+        <label for="paymentType">Payment Type:</label>
+        <input type="text" id="paymentType" name="paymentType" class="package-control">
+      </div>
+  
+      <div>
+        <label for="gateWay">Gate-Way:</label>
+        <input type="text" id="gateWay" name="gateWay" class="package-control">
+      </div>
+  
+      <div>
+        <label for="paymentDetails">Payment Details:</label>
+        <textarea id="paymentDetails" name="paymentDetails" class="package-control"></textarea>
+      </div>
+      <button type="submit">Add Package</button>
+    </form>
+    </div>
+  </div>
+</body>
+</html>
