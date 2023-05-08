@@ -3,12 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/book.css">
   <title>Booking Ticket</title>
 </head>
 
 <body>
   <div class="form">
-    <h2>Booking Form</h2>
+    <h2><u>Booking Form</u> </h2>
     <form>
       <label for="bookingDate">Booking Date:</label>
       <input type="date" id="bookingDate" name="bookingDate"><br>
@@ -28,7 +29,9 @@
       <!-- Once customer clicks on submit, create a ticket and put status pending, and show an 
         alert message with ticket id, and booking id, with status: Waiting for confirmation from hotel
       do it in js: @Amanastel -->
-      <input type="submit" value="Submit">
+     <div id="btn">
+      <input id="color" type="submit" value="Submit">
+     </div>
     </form>
   </div>
 </body>
