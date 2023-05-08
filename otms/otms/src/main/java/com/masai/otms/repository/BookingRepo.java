@@ -13,8 +13,11 @@ import org.springframework.stereotype.Repository;
 public interface BookingRepo extends JpaRepository<Booking, Integer> {
 //	@Query("select e from booking e where e.bookingId=?1")
 //	public List<Booking> viewBookingById(Integer bookingId) throws BookingException;
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> 9b3f258162a4048a334bdf0a8fef1b7457895363
 	
 	
 }

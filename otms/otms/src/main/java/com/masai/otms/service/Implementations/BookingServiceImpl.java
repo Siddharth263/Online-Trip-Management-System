@@ -1,7 +1,12 @@
 package com.masai.otms.service.Implementations;
 
+<<<<<<< HEAD
 import java.util.ArrayList; 
 import java.util.List; 
+=======
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> 9b3f258162a4048a334bdf0a8fef1b7457895363
 import java.util.Optional;
 
 import com.masai.otms.service.BookingService;
@@ -86,9 +91,13 @@ public class BookingServiceImpl implements BookingService {
 
     	Optional<Booking> bookinglist = bookRepo.findById(bookingId);
     	
+<<<<<<< HEAD
     	
     	
 		return bookinglist.orElseThrow(()-> new BookingException("invalid Booking id "+ bookingId));
+=======
+		return bookinglist.orElseThrow(()-> new BookingException("Booking ID invalid"));
+>>>>>>> 9b3f258162a4048a334bdf0a8fef1b7457895363
     	
     	
     	
