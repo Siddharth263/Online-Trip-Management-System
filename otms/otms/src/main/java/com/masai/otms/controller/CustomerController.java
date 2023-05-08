@@ -19,14 +19,14 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
     private Customer customer;
 
     @PostMapping("/customers")
     public ResponseEntity<Customer> saveCustomerHandler(@RequestBody Customer customer){
 
-        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
+//        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
 
         Customer registeredCustomer= customerService.addCustomer(customer);
 

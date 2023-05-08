@@ -17,41 +17,41 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Configuration
 public class AppConfig {
 
-	@Bean
-	public SecurityFilterChain springSecurityConfiguration(HttpSecurity http) throws Exception {
-
-		http.authorizeHttpRequests()
-                .requestMatchers(HttpMethod.POST, "/customers").permitAll()
-                .requestMatchers(HttpMethod.POST, "/users").permitAll()
-                .requestMatchers(HttpMethod.POST, "/bookings").permitAll()
-                .requestMatchers(HttpMethod.POST, "/travels").permitAll()
-                .requestMatchers(HttpMethod.POST, "/routes").permitAll()
-                .requestMatchers("/admin/**").hasRole("ADMIN")
-                .anyRequest()
-                .authenticated()
-                .and()
-                .csrf().disable()
-                .formLogin()
-                .and()
-                .httpBasic();
-
-		return http.build();
-
-	}
-
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-
-		return new BCryptPasswordEncoder();
-
-	}
-
-    @Bean
-    public UserDetailsService userDetailsService(){
-
-        UserDetails adminUser = User.withUsername("aman").password(passwordEncoder().encode("aman")).roles("ADMIN").build();
-
-        return new InMemoryUserDetailsManager(adminUser);
-    }
+//	@Bean
+//	public SecurityFilterChain springSecurityConfiguration(HttpSecurity http) throws Exception {
+//
+//		http.authorizeHttpRequests()
+//                .requestMatchers(HttpMethod.POST, "/customers").permitAll()
+//                .requestMatchers(HttpMethod.POST, "/users").permitAll()
+//                .requestMatchers(HttpMethod.POST, "/bookings").permitAll()
+//                .requestMatchers(HttpMethod.POST, "/travels").permitAll()
+//                .requestMatchers(HttpMethod.POST, "/routes").permitAll()
+//                .requestMatchers("/admin/**").hasRole("ADMIN")
+//                .anyRequest()
+//                .authenticated()
+//                .and()
+//                .csrf().disable()
+//                .formLogin()
+//                .and()
+//                .httpBasic();
+//
+//		return http.build();
+//
+//	}
+//
+//	@Bean
+//	public PasswordEncoder passwordEncoder() {
+//
+//		return new BCryptPasswordEncoder();
+//
+//	}
+//
+//    @Bean
+//    public UserDetailsService userDetailsService(){
+//
+//        UserDetails adminUser = User.withUsername("aman").password(passwordEncoder().encode("aman")).roles("ADMIN").build();
+//
+//        return new InMemoryUserDetailsManager(adminUser);
+//    }
 
 }

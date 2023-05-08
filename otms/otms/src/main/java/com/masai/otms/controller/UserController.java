@@ -26,8 +26,8 @@ public class UserController {
 
     private UserRepo userRepo;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
 	
 	@GetMapping("/signIn")
 	public ResponseEntity<Customer> getLoggedInCustomerDetailsHandler(Authentication auth){
@@ -43,7 +43,7 @@ public class UserController {
     @PostMapping("/users")
     public ResponseEntity<Users> addUsersHandler(@RequestBody Users users){
 
-        users.setUserPassword(passwordEncoder.encode(users.getUserPassword()));
+//        users.setUserPassword(passwordEncoder.encode(users.getUserPassword()));
         Users users1 = usersService.addUser(users);
 
         return new ResponseEntity<>(users1, HttpStatus.CREATED);
