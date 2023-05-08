@@ -47,8 +47,6 @@ public class BookingController {
 
 	@GetMapping("/getbookings/{bookingId}")
 
-	public ResponseEntity <Booking>viewBookingsHandler(@Valid @PathVariable Integer bookingId) throws BookingException {
-
 	public ResponseEntity<Booking> viewBookingsHandler(@Valid @PathVariable Integer bookingId) throws BookingException {
 
 
@@ -62,7 +60,7 @@ public class BookingController {
 
 	
 	@GetMapping("/getbookingdetails")
-	public ResponseEntity<List<Booking>> viewAllBookingsHandler() throws BookingException {
+	public ResponseEntity<List<Booking>> viewAllBookingsHandler() {
 		
 		List<Booking> viewALLbookings = bookingService.viewAllBookings();
 		

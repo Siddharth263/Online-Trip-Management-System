@@ -88,21 +88,9 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public Booking viewBookings(Integer bookingId) throws BookingException {
-
     	Optional<Booking> bookinglist = bookRepo.findById(bookingId);
 
-    	
-    	
-    	
 		return bookinglist.orElseThrow(()-> new BookingException("invalid Booking id "+ bookingId));
-
-    	
-		return bookinglist.orElseThrow(()-> new BookingException("Booking ID invalid"));
-
-    	
-    	
-    	
-    	
     }
 
     @Override
