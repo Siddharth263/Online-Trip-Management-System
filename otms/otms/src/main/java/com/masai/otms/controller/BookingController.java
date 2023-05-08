@@ -1,6 +1,6 @@
 package com.masai.otms.controller;
 
-import java.util.List;  
+import java.util.List;    
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,12 +45,18 @@ public class BookingController {
 	
 	
 
+	
+//
+//	public ResponseEntity <Booking>viewBookingsHandler(@Valid @PathVariable Integer bookingId) throws BookingException {
+//
+//	public ResponseEntity<Booking> viewBookingsHandler(@Valid @PathVariable Integer bookingId) throws BookingException {
+//
+//
 	@GetMapping("/getbookings/{bookingId}")
-<<<<<<< HEAD
-	public ResponseEntity <Booking>viewBookingsHandler(@Valid @PathVariable Integer bookingId) throws BookingException {
-=======
+
 	public ResponseEntity<Booking> viewBookingsHandler(@Valid @PathVariable Integer bookingId) throws BookingException {
->>>>>>> 9b3f258162a4048a334bdf0a8fef1b7457895363
+
+
 
 	       Booking viewbookings = bookingService.viewBookings(bookingId);
 		   
@@ -62,7 +68,7 @@ public class BookingController {
 
 	
 	@GetMapping("/getbookingdetails")
-	public ResponseEntity<List<Booking>> viewAllBookingsHandler() throws BookingException {
+	public ResponseEntity<List<Booking>> viewAllBookingsHandler() {
 		
 		List<Booking> viewALLbookings = bookingService.viewAllBookings();
 		
