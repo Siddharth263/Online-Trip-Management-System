@@ -13,10 +13,17 @@
   <div class="container">
     <h2 class="title">Safar.com</h2>
     <div class="login-links">
-      <a href="./admin.html">Login as Admin</a>
-      <a href="./customer.html">Login/Sign Up as Customer</a>
+      <!-- <a href="./admin.html">Login as Admin</a> -->
+      <!-- <a href="http://localhost:8080/cs-con/customers">Login/Sign Up as Customer</a> -->
+      <p onclick="changePage()">Login as Admin</p>
+      <p onclick="changePage()">Login/Sign Up as Customer</p>
     </div>
   </div>
 </body>
 
 </html>
+<script>
+  function changePage() {
+    window.location.href = "http://localhost:8080/cs-con/customers"
+  }
+</script>

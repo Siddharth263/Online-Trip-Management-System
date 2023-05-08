@@ -24,16 +24,17 @@ body {
   justify-content: center;
 }
 
-a {
+a, p {
   text-decoration: none;
   color: #333;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   border-radius: 0.25rem;
   background-color: #EEE;
   font-size: 1em;
   font-weight: bold;
 }
 
-a:hover {
+a:hover, p:hover {
   background-color: #DDD;
+  cursor: pointer;
 }

@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*",  allowedHeaders = "*")
+@RequestMapping("/cs-con")
 public class CustomerController {
 
     @Autowired
