@@ -82,7 +82,7 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 
 ## Installation & Run
 
-* Before running the API server, you should update the database config inside the [application.properties](https://github.com/Siddharth263/nippy-needle-3633/blob/main/src/main/resources/application.properties) file. 
+* Before running the API server, you should update the database config inside the [application.properties](https://github.com/Siddharth263/nippy-needle-3633/blob/main/otms/otms/src/main/resources/application.properties) file. 
 * Update the port number, username and password as per your local database config.
 
 ```
