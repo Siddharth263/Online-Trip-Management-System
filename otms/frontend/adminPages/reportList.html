@@ -21,10 +21,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="row-id">1</td>
+        <tr id="table-body">
+          <!-- <td class="row-id">1</td>
           <td class="row-name">Report</td>
-          <td class="row-status">Status</td>
+          <td class="row-status">Status</td> -->
         </tr>
       </tbody>
     </table>
@@ -33,3 +33,29 @@
 </body>
 
 </html>
+
+<script>
+  let url = "http://localhost:8080/cs-con/customers"
+fetchData(url);
+
+
+function fetchData(url) {
+let employeeTableBody = document.getElementById('table-body');
+    fetch("http://localhost:8080/report/all").then(response => {
+        response.json().then(data => {
+            // console.log(data);
+            data.forEach(employee => {
+                let row = document.createElement('tr');
+                row.innerHTML = `
+                  <td id="row-id">${employee.id}</td> 
+                  <td id="row-name">${employee.name}</td>
+                  <td id="row-Status">${employee.email}</td>
+              `;
+                employeeTableBody.appendChild(row);
+            })
+        })
+
+    })
+
+}
+</script>

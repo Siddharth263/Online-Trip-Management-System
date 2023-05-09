@@ -26,7 +26,7 @@
         <label for="phoneNumber">Phone Number:</label>
         <input type="text" id="phoneNumber" name="phoneNumber" class="travel-control">
       </div>
-      <button type="submit">Add Travel</button>
+      <button type="submit" onclick="registerTravel()">Add Travel</button>
     </form>
     </div>
   
@@ -64,9 +64,72 @@
         <label for="paymentDetails">Payment Details:</label>
         <textarea id="paymentDetails" name="paymentDetails" class="package-control"></textarea>
       </div>
-      <button type="submit">Add Package</button>
+      <button type="submit" onclick="registerPackage()">Add Package</button>
     </form>
     </div>
   </div>
 </body>
 </html>
+
+<script>
+  function registerTravel() {
+		event.preventDefault();
+
+		let travelName = document.getElementById("travelName").value;
+		let representativeName = document.getElementById("representativeName").value;
+		let address = document.getElementById("address").value;
+		let phoneNumber = document.getElementById("phoneNumber").value;
+	
+
+		fetch("http://localhost:8080/bus", {
+		    method: "POST",
+		    headers: {
+		        "content-type": "application/json"
+		    },
+		    body: JSON.stringify({
+		        "travelsName": travelName,
+		        "agentName": representativeName,
+		        "address": address,
+		        "phoneNumber": phoneNumber
+		        
+		    })
+		}).then(response => {
+		    response.json().then(data => {
+		        alert("travel sucessfully Added with ID: " + data.travelId);
+		    });
+		})
+
+  }
+  function registerPackage() {
+		event.preventDefault();
+
+		let packageName = document.getElementById("packageName").value;
+		let description = document.getElementById("description").value;
+    let packageType = document.getElementById("packageType").value;
+		let paymentCost = document.getElementById("paymentCost").value;
+		let paymentType = document.getElementById("paymentType").value;
+		let gateWay = document.getElementById("gateWay").value;
+		let paymentDetails = document.getElementById("paymentDetails").value;
+	
+
+		fetch("http://localhost:8080/save-package", {
+		    method: "POST",
+		    headers: {
+		        "content-type": "application/json"
+		    },
+		    body: JSON.stringify({
+		        "packageName": packageName,
+		        "description": description,
+		        "packageType": packageType,
+		        "paymentCost": paymentCost,
+            "paymentDetails" : paymentDetails
+		        
+		    })
+		}).then(response => {
+		    response.json().then(data => {
+		        alert("package sucessfully Added with ID: " + data.packageId);
+		    });
+		})
+
+  }
+</script>

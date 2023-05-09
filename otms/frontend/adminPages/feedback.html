@@ -19,7 +19,7 @@
         <label for="feedback">Feedback:</label>
         <textarea id="feedback" name="feedback" required></textarea>
         
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="registerFeedback()">
       </form>
       
       <div class="success-message">
@@ -28,3 +28,32 @@
 
 </body>
 </html>
+
+<script>
+   function registerFeedback() {
+		event.preventDefault();
+
+		let name = document.getElementById("name").value;
+		let email = document.getElementById("email").value;
+		let feedback = document.getElementById("feedback").value;
+	
+
+	// 	fetch("http://localhost:8080/bus", {
+	// 	    method: "POST",
+	// 	    headers: {
+	// 	        "content-type": "application/json"
+	// 	    },
+	// 	    body: JSON.stringify({
+	// 	        "feedback": feedback,
+	// 	        "rating": busType,
+	// 	        "capacity": capacity
+		        
+	// 	    })
+	// 	}).then(response => {
+	// 	    response.json().then(data => {
+	// 	        alert("Route sucessfully Added with ID: " + data.busId);
+	// 	    });
+	// 	})
+
+  }
+</script>

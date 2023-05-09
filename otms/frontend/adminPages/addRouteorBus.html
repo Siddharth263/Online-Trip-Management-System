@@ -41,7 +41,7 @@
         <label for="no-of-buses">No of Buses:</label>
         <input type="number" id="no-of-buses" name="no-of-buses" class="form-route">
         <br>
-        <button type="submit" id="add-route-btn" class="form-btn">Add Route</button>
+        <button type="submit" id="add-route-btn" class="form-btn" onclick="registerRoute()">Add Route</button>
       </form>
     </div>
 
@@ -58,7 +58,7 @@
         <label for="capacity">Capacity:</label>
         <input type="number" id="capacity" name="capacity" min="0" class="form-bus">
         <br>
-        <button type="submit" id="add-bus-btn" class="form-btn">Add Bus</button>
+        <button type="submit" id="add-bus-btn" class="form-btn" onclick="registerBus()">Add Bus</button>
       </form>
     </div>
   </div>
@@ -66,3 +66,66 @@
 </body>
 
 </html>
+
+<script>
+  function registerRoute() {
+		event.preventDefault();
+
+		let routeFrom = document.getElementById("route-from").value;
+		let routeTo = document.getElementById("route-to").value;
+		let departureTime = document.getElementById("departure-time").value;
+		let arrivalTime = document.getElementById("arrival-time").value;
+		let dateOfJourney = document.getElementById("date-of-journey").value;
+		let pickupPoint = document.getElementById("pickup-point").value;
+		let fare = document.getElementById("fare").value;
+		let noOfBuses = document.getElementById("no-of-buses").value;
+
+		fetch("http://localhost:8080/routes", {
+		    method: "POST",
+		    headers: {
+		        "content-type": "application/json"
+		    },
+		    body: JSON.stringify({
+		        "routeFrom": routeFrom,
+		        "routeTo": routeTo,
+		        "departureTime": departureTime,
+		        "arrivalTime": arrivalTime,
+		        "doj" : dateOfJourney,
+		        "pickupPoint" : pickupPoint,
+		        "fare" : fare
+		    })
+		}).then(response => {
+		    response.json().then(data => {
+		        alert("Route sucessfully Added with ID: " + data.routeId);
+		    });
+		})
+
+  }
+
+  function registerBus() {
+		event.preventDefault();
+
+		let busName = document.getElementById("bus-name").value;
+		let busType = document.getElementById("bus-type").value;
+		let capacity = document.getElementById("capacity").value;
+	
+
+		fetch("http://localhost:8080/bus", {
+		    method: "POST",
+		    headers: {
+		        "content-type": "application/json"
+		    },
+		    body: JSON.stringify({
+		        "busName": busName,
+		        "busType": busType,
+		        "capacity": capacity
+		        
+		    })
+		}).then(response => {
+		    response.json().then(data => {
+		        alert("Route sucessfully Added with ID: " + data.busId);
+		    });
+		})
+
+  }
+</script>

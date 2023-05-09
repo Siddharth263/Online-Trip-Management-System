@@ -60,3 +60,22 @@ body {
   #report-table tbody tr:hover {
     background-color: #f5f5f5;
   }
+
+  #row-id {
+    text-align: center;
+    margin: auto;
+    background-color: #00b4db;
+  }
+
+  #row-name{
+    background-color: rosybrown;
+  }
+
+  #table-body{
+    width: 100%;
+    border: 3px solid red;
+  }
+
+  #row-Status{
+
+  }
