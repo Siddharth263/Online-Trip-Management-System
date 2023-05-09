@@ -35,22 +35,17 @@
 				<input type="password" id="password" name="password" placeholder="Enter your password" required>
 				<label for="phoneNumber">Phone Number</label>
 				<input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
-				<button type="submit" onclick="registerEmployee()">Sign Up</button>
+				<button type="submit" onclick="registerCustomer()">Sign Up</button>
 			</form>
 		</div>
 	</div>
 </body>
 
 </html>
-
+<script src="js/Customer.js"></script>
 <script>
 
-	function login() {
-		event.preventDefault();
-
-	}
-
-	function registerEmployee() {
+	function registewrCustomer() {
 		event.preventDefault();
 
 		let fullname = document.getElementById("fullname").value;
@@ -60,23 +55,23 @@
 		let phoneNumber = document.getElementById("phoneNumber").value;
 		console.log(fullname, address, address, email, password, phoneNumber)
 
-		// fetch("http://localhost:8080/cs-con/customers", {
-		//     method: "POST",
-		//     headers: {
-		//         "content-type": "application/json"
-		//     },
-		//     body: JSON.stringify({
-		//         "name": fullname,
-		//         "password": password,
-		//         "address": address,
-		//         "email": email,
-		//         "phoneNumber" : phoneNumber
-		//     })
-		// }).then(response => {
-		//     response.json().then(data => {
-		//         alert("Customer sucessfully registered with ID: " + data.id);
-		//     });
-		// })
+		fetch("http://localhost:8080/cs-con/customers", {
+		    method: "POST",
+		    headers: {
+		        "content-type": "application/json"
+		    },
+		    body: JSON.stringify({
+		        "name": fullname,
+		        "password": password,
+		        "address": address,
+		        "email": email,
+		        "phoneNumber" : phoneNumber
+		    })
+		}).then(response => {
+		    response.json().then(data => {
+		        alert("Customer sucessfully registered with ID: " + data.id);
+		    });
+		})
 
 		// fetch("http://localhost:8080/token/csrf")
 		// 	.then(response => response.json())
@@ -106,28 +101,28 @@
 		// 			});
 		// 	});
 
-		var myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
+	// 	var myHeaders = new Headers();
+	// 	myHeaders.append("Content-Type", "application/json");
 
-		var raw = JSON.stringify({
-			"name": fullname,
-			"password": address,
-			"address": password,
-			"email": email,
-			"phoneNumber": phoneNumber
-		});
+	// 	var raw = JSON.stringify({
+	// 		"name": fullname,
+	// 		"password": address,
+	// 		"address": password,
+	// 		"email": email,
+	// 		"phoneNumber": phoneNumber
+	// 	});
 
-		var requestOptions = {
-			method: 'POST',
-			headers: myHeaders,
-			body: raw,
-			redirect: 'follow'
-		};
+	// 	var requestOptions = {
+	// 		method: 'POST',
+	// 		headers: myHeaders,
+	// 		body: raw,
+	// 		redirect: 'follow'
+	// 	};
 
-		fetch("http://localhost:8080/cs-con/customers", requestOptions)
-			.then(response => response.text())
-			.then(result => console.log(result))
-			.catch(error => console.log('error', error));
-		console.log(909090);
+	// 	fetch("http://localhost:8080/cs-con/customers", requestOptions)
+	// 		.then(response => response.text())
+	// 		.then(result => console.log(result))
+	// 		.catch(error => console.log('error', error));
+	// 	console.log(909090);
 	}
 </script>
