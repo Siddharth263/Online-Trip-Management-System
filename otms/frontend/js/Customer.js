@@ -27,12 +27,3 @@ function registerCustomer() {
     })
 }
 
-function login(){
-    event.preventDefault();
-    let adminUserName = document.getElementById("username").value;
-    let adminPassword = document.getElementById("password").value;
-    
-    if(adminPassword == "admin" && adminPassword == "admin"){
-        
-    }
-}

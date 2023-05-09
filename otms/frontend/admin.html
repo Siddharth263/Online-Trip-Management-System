@@ -38,7 +38,7 @@
                         <input type="password" class="form-control" id="password" placeholder="Enter password"
                             name="password" required>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <button type="submit" class="btn btn-primary btn-block" onclick="logein()">Login</button>
                 </form>
             </div>
         </div>
@@ -47,6 +47,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
+
+<script>
+function logein(){
+    event.preventDefault();
+    let adminUserName = document.getElementById("email").value;
+    let adminPassword = document.getElementById("password").value;
+    
+    if(adminPassword == "admin" && adminPassword == "admin"){
+        Swal.fire({
+              position: "top",
+              icon: "success",
+              title: "Login Successfull",
+              showConfirmButton: false,
+              timer: 1500,
+              
+            });
+            setTimeout(() => {
+                window.location.href = "/adminPages/adminPagefunctions.html";
+            },2000);
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'invalid credentials !',
+        })
+    }
+}
+
+</script>

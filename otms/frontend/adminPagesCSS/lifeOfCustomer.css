@@ -41,6 +41,7 @@ body {
   }
   
  
+
   #row_id,
   #row_name,
   #row_email,
@@ -50,6 +51,11 @@ body {
   #row_hotel_id,
   #row_booking_id {
     text-align: center;
+  }
+
+  .tv{
+    text-align: center;
+    border-radius: 2px solid red;
   }
   
   #row_feedback {
