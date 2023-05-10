@@ -1,6 +1,7 @@
 package com.masai.otms.controller;
 
 import com.masai.otms.models.Package;
+import com.masai.otms.repository.PackageRepo;
 import com.masai.otms.service.PackageService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class PackageController {
     @Autowired
     PackageService pServ;
 
+    @Autowired
+    private PackageRepo pRepo;
+
     @PostMapping("/save-package")
     public ResponseEntity<Package> addPackage(@Valid @RequestBody Package p) {
         return ResponseEntity.ok(pServ.addPackage(p));
@@ -26,9 +30,9 @@ public class PackageController {
         return ResponseEntity.ok(pServ.deletePackage(id));
     }
 
-    @GetMapping("/search/{id}")
-    public ResponseEntity<Package> searchPackage(@Valid @PathVariable Integer id) {
-        return ResponseEntity.ok(pServ.searchPackage(id));
+    @GetMapping("/search/{name}")
+    public ResponseEntity<List<Package>> searchPackage(@Valid @PathVariable String name) {
+        return ResponseEntity.ok(pRepo.findByPackageName(name));
     }
 
     @GetMapping("/all-packages")
