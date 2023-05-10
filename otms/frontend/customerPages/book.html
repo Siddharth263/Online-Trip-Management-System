@@ -29,11 +29,66 @@
       <!-- Once customer clicks on submit, create a ticket and put status pending, and show an 
         alert message with ticket id, and booking id, with status: Waiting for confirmation from hotel
       do it in js: @Amanastel -->
-     <div id="btn">
-      <input id="color" type="submit" value="Submit">
-     </div>
+      <div id="btn">
+        <input id="color" type="submit" value="Submit">
+      </div>
     </form>
   </div>
 </body>
 
 </html>
+
+<script>
+  document.querySelector('form').addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    let bookingDate = document.getElementById('bookingDate').value;
+    let bookingTitle = document.getElementById('bookingTitle').value;
+    let bookingType = document.getElementById('bookingType').value;
+    let packageId = document.getElementById('packageId').value;
+
+    let bId;
+
+    fetch('http://localhost:8080/search/' + packageId)
+      .then(response => response.json())
+      .then(data => {
+        fetch('http://localhost:8080/bookings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            bookingDate: bookingDate,
+            bookingTitle: bookingTitle,
+            bookingType: bookingType,
+            description: 'Booking for Hotel'
+          })
+        })
+          .then(response => response.json())
+          .then(data => {
+            bId = data.bookingId;
+          })
+          .catch(error => {
+            console.error(error);
+            alert('Error creating ticket');
+          });
+        
+        fetch('http://localhost:8080/tickets/new', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            status: 'PENDING'
+          }).then(response => response.json()).then(data => {
+            
+          })
+        })
+      })
+      .catch(error => {
+        console.error(error);
+        alert('Error creating ticket');
+      });
+  });
+
+</script>

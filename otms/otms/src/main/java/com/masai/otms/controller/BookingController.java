@@ -1,7 +1,9 @@
 package com.masai.otms.controller;
 
-import java.util.List;    
+import java.util.List;
 
+import com.masai.otms.models.TicketDetails;
+import com.masai.otms.repository.TicketDetailsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,11 +27,17 @@ public class BookingController {
 	
 	@Autowired
 	private BookingService bookingService;
+
+	@Autowired
+	private TicketDetailsRepo tRepo;
 	 	 
 	@PostMapping("/bookings")
 	public ResponseEntity<Booking> makeBookingHandler(@Valid @RequestBody Booking booking) throws BookingException {
 	   
-	        Booking addbooking = bookingService.makeBooking(booking);
+		Booking addbooking = bookingService.makeBooking(booking);
+		TicketDetails td = new TicketDetails();
+		td.setStatus("Pending");
+		TicketDetails td2 = tRepo.save(td);
 			
 			return new ResponseEntity<>(addbooking,HttpStatus.CREATED);
 	}

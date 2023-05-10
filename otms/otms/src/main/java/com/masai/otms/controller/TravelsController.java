@@ -63,7 +63,7 @@ public class TravelsController {
 		
 	}
 		
-		@GetMapping("/getTravels/{travelId}")
+		@GetMapping("/getTravels/")
 	   public ResponseEntity<List<Travels>> viewTravelsHandler(){
 
 		List<Travels> viewlist = travelservice.viewTravels();
