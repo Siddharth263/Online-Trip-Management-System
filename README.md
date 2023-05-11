@@ -3,6 +3,7 @@
 
 <!-- ============================================  DETAILS ======================================================  -->
 
+<img align="center" alt="Coding" width="700" height="500" src="https://github.com/fehmida99/new-berry-436/assets/112754704/3350fe3a-4994-4faa-b0bc-dbc76383f6e0">
 <li>An Collabrative Project Consisting Of the 5 Developer Depicting the implementation of the Trip Managment Platform like MakeMyTrip or Yatra.
 <li>An developement of RESTful API for an application. This API performs all the fundamental CRUD operations of any with user validation at every step.
 <br>
