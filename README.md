@@ -3,7 +3,7 @@
 
 <!-- ============================================  DETAILS ======================================================  -->
 
-<img align="center" alt="Coding" width="700" height="600" src="https://github.com/fehmida99/new-berry-436/assets/112754704/3350fe3a-4994-4faa-b0bc-dbc76383f6e0">
+<img align="center" alt="Coding" width="500" height="400" src="https://github.com/fehmida99/new-berry-436/assets/112754704/3350fe3a-4994-4faa-b0bc-dbc76383f6e0">
 <br>
 <br>
 <li>An Collabrative Project Consisting Of the 5 Developer Depicting the implementation of the Trip Managment Platform like MakeMyTrip or Yatra.
