@@ -5,6 +5,7 @@
 
 <img align="center" alt="Coding" width="700" height="600" src="https://github.com/fehmida99/new-berry-436/assets/112754704/3350fe3a-4994-4faa-b0bc-dbc76383f6e0">
 <br>
+<br>
 <li>An Collabrative Project Consisting Of the 5 Developer Depicting the implementation of the Trip Managment Platform like MakeMyTrip or Yatra.
 <li>An developement of RESTful API for an application. This API performs all the fundamental CRUD operations of any with user validation at every step.
 <br>
@@ -34,8 +35,8 @@ Author - [@Priyanshu](https://github.com/Siddharth263)
 ## Contributors
 
 * [@Priyanshu](https://github.com/Siddharth263) -- Team Lead
-* [@Aman Kumar](https://github.com/Amanastel)
 * [@Fehmida Shaikh](https://github.com/fehmida99)
+* [@Aman Kumar](https://github.com/Amanastel)
 * [@DikshaGaupale](https://github.com/DikshaGaupale)
   
 <!-- ============================================  TECH STACK ======================================================  -->
