@@ -32,7 +32,7 @@ public class BookingController {
 	private TicketDetailsRepo tRepo;
 	 	 
 	@PostMapping("/bookings")
-	public ResponseEntity<Booking> makeBookingHandler(@Valid @RequestBody Booking booking) throws BookingException {
+	public ResponseEntity<Booking> makeBookingHandler(@Valid @RequestBody Booking booking){
 	   
 		Booking addbooking = bookingService.makeBooking(booking);
 		TicketDetails td = new TicketDetails();
@@ -43,7 +43,7 @@ public class BookingController {
 	}
 
 	@DeleteMapping("/cancelbooking/{bookingId}")
-	public ResponseEntity<Booking> cancelBookingHandler(@Valid @PathVariable Integer bookingId) throws BookingException {
+	public ResponseEntity<Booking> cancelBookingHandler(@Valid @PathVariable Integer bookingId){
 
 	      Booking cancelbooking = bookingService.cancelBooking(bookingId);
 
@@ -61,8 +61,7 @@ public class BookingController {
 //
 //
 	@GetMapping("/getbookings/{bookingId}")
-
-	public ResponseEntity<Booking> viewBookingsHandler(@Valid @PathVariable Integer bookingId) throws BookingException {
+	public ResponseEntity<Booking> viewBookingsHandler(@Valid @PathVariable Integer bookingId){
 
 
 

@@ -3,7 +3,7 @@ function registerCustomer() {
 
     let fullname = document.getElementById("fullname").value;
     let address = document.getElementById("address").value;
-    let password = document.getElementById("password").value;
+    let password = document.getElementById("passwordSign").value;
     let email = document.getElementById("email").value;
     let phoneNumber = document.getElementById("phoneNumber").value;
     console.log(fullname, address, address, email, password, phoneNumber)
@@ -23,6 +23,7 @@ function registerCustomer() {
     }).then(response => {
         response.json().then(data => {
             alert("Customer sucessfully registered with ID: " + data.id);
+            window.location.href="/customerPages/customerPageFunction.html"
         });
     })
 }

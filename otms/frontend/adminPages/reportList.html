@@ -20,12 +20,12 @@
           <th class="column-status">Report Status</th>
         </tr>
       </thead>
-      <tbody>
-        <tr id="table-body">
-          <!-- <td class="row-id">1</td>
+      <tbody id="table-body">
+        <!-- <tr >
+          <td class="row-id">1</td>
           <td class="row-name">Report</td>
-          <td class="row-status">Status</td> -->
-        </tr>
+          <td class="row-status">Status</td>
+        </tr> -->
       </tbody>
     </table>
   </div>
@@ -36,26 +36,25 @@
 
 <script>
   let url = "http://localhost:8080/cs-con/customers"
-fetchData(url);
+  fetchData(url);
 
 
-function fetchData(url) {
-let employeeTableBody = document.getElementById('table-body');
+  function fetchData(url) {
+    let employeeTableBody = document.getElementById('table-body');
     fetch("http://localhost:8080/report/all").then(response => {
-        response.json().then(data => {
-            // console.log(data);
-            data.forEach(employee => {
-                let row = document.createElement('tr');
-                row.innerHTML = `
-                  <td id="row-id">${employee.id}</td> 
-                  <td id="row-name">${employee.name}</td>
-                  <td id="row-Status">${employee.email}</td>
+      response.json().then(data => {
+        data.forEach(employee => {
+          let row = document.createElement('tr');
+          row.innerHTML = `
+                  <td id="row-id">${employee.reportId}</td> 
+                  <td id="row-name">${employee.reportName}</td>
+                  <td id="row-Status">${employee.reportType}</td>
               `;
-                employeeTableBody.appendChild(row);
-            })
+          employeeTableBody.appendChild(row);
         })
+      })
 
     })
 
-}
+  }
 </script>

@@ -44,7 +44,7 @@ public class BookingServiceImpl implements BookingService {
 	
 	
     @Override
-    public Booking makeBooking(Booking booking) throws BookingException {
+    public Booking makeBooking(Booking booking){
     	
     	booking.setBookingId(booking.getBookingId());
     	try {
@@ -79,7 +79,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public Booking cancelBooking(Integer bookingId) throws BookingException {
+    public Booking cancelBooking(Integer bookingId){
         Optional<Booking> optionalBooking = bookRepo.findById(bookingId);
         if (optionalBooking.isPresent()) {
             Booking booking = optionalBooking.get();
@@ -94,7 +94,7 @@ public class BookingServiceImpl implements BookingService {
     
     
     @Override
-    public Booking viewBookings(Integer bookingId) throws BookingException {
+    public Booking viewBookings(Integer bookingId){
     	Optional<Booking> bookinglist = bookRepo.findById(bookingId);
 
 		return bookinglist.orElseThrow(()-> new BookingException("invalid Booking id "+ bookingId));
@@ -103,7 +103,7 @@ public class BookingServiceImpl implements BookingService {
     
 
     @Override
-    public List<Booking> viewAllBookings() throws BookingException {
+    public List<Booking> viewAllBookings(){
 	
 	List<Booking> bookings = bookRepo.findAll();
 	

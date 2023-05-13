@@ -31,17 +31,11 @@ public class Route {
     @Size(min = 3, max = 20, message = "Name should be 3 to 20 letters")
     private String routeTo;
 
-    @NotBlank(message = "Departure date-time is required")
-    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$", message = "Date-Time Format: yyyy-MM-dd'T'HH:mm:ss (Here T is the separator between date and time")
     private LocalDateTime departureTime;
 
-    @NotBlank(message = "Arrival date-time is required")
-    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$", message = "Date-Time Format: yyyy-MM-dd'T'HH:mm:ss (Here T is the separator between date and time")
     private LocalDateTime arrivalTime;
 
-    @NotNull(message = "Date of journey cannot be null")
     @Future(message = "Date of journey must be in the future with format: yyyy-MM-dd")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate doj;
 
     @NotNull(message = "Pickup Point Cannot be empty or blank or null")
