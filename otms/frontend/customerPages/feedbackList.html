@@ -35,12 +35,13 @@ fetch(apiUrl)
   .then(feedbackData => {
     const tbody = document.querySelector('#tbody');
     feedbackData.forEach(feedback => {
+      console.log(feedback)
       const tr = document.createElement('tr');
       tr.innerHTML = `
-        <td class="col" id="feedback-id">${feedback.id}</td>
-        <td class="col" id="feedback-message">${feedback.message}</td>
+        <td class="col" id="feedback-id">${feedback.feedbackId}</td>
+        <td class="col" id="feedback-message">${feedback.feedback}</td>
         <td class="col" id="feedback-rating">${feedback.rating}/5</td>
-        <td class="col" id="feedback-date">${feedback.date}</td>
+        <td class="col" id="feedback-date">${feedback.submitDate}</td>
       `;
       tbody.appendChild(tr);
     });

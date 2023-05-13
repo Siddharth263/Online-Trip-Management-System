@@ -18,7 +18,7 @@
 				<label for="username">Username/Email</label>
 				<input type="text" id="username" name="username" placeholder="Enter your username" required>
 				<label for="password">Password</label>
-				<input type="password" id="password" name="password" placeholder="Enter your password" required>
+				<input type="password" id="passwordLog" name="password" placeholder="Enter your password" required>
 				<button type="submit" onclick="login()">Login</button>
 			</form>
 		</div>
@@ -32,7 +32,7 @@
 				<label for="username">Address</label>
 				<input type="text" id="address" name="username" placeholder="Enter your Address" required>
 				<label for="password">Password</label>
-				<input type="password" id="password" name="password" placeholder="Enter your password" required>
+				<input type="password" id="passwordSign" name="password" placeholder="Enter your password" required>
 				<label for="phoneNumber">Phone Number</label>
 				<input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
 				<button type="submit" onclick="registerCustomer()">Sign Up</button>
@@ -50,7 +50,7 @@
 
 		let fullname = document.getElementById("fullname").value;
 		let address = document.getElementById("address").value;
-		let password = document.getElementById("password").value;
+		let password = document.getElementById("passwordSign").value;
 		let email = document.getElementById("email").value;
 		let phoneNumber = document.getElementById("phoneNumber").value;
 		console.log(fullname, address, address, email, password, phoneNumber)
@@ -70,59 +70,8 @@
 		}).then(response => {
 		    response.json().then(data => {
 		        alert("Customer sucessfully registered with ID: " + data.id);
+						window.location.href="/customerPages/customerPageFunction.html"
 		    });
 		})
-
-		// fetch("http://localhost:8080/token/csrf")
-		// 	.then(response => response.json())
-		// 	.then(csrf => {
-		// 		fetch("http://localhost:8080/cs-con/customers", {
-		// 			method: "POST",
-		// 			headers: {
-		// 				"content-type": "application/json",
-		// 				"X-CSRF-TOKEN": csrf.token
-		// 			},
-		// 			body: JSON.stringify({
-		// 				"name": fullname,
-		// 				"password": password,
-		// 				"address": address,
-		// 				"email": email,
-		// 				"phoneNumber": phoneNumber
-		// 			})
-		// 		})
-		// 			.then(response => {
-		// 				response.json().then(data => {
-		// 					alert("Customer sucessfully registered with ID: " + data.id);
-		// 				});
-		// 			})
-		// 			.catch(error => {
-		// 				console.error(error);
-		// 				alert("Error registering customer");
-		// 			});
-		// 	});
-
-	// 	var myHeaders = new Headers();
-	// 	myHeaders.append("Content-Type", "application/json");
-
-	// 	var raw = JSON.stringify({
-	// 		"name": fullname,
-	// 		"password": address,
-	// 		"address": password,
-	// 		"email": email,
-	// 		"phoneNumber": phoneNumber
-	// 	});
-
-	// 	var requestOptions = {
-	// 		method: 'POST',
-	// 		headers: myHeaders,
-	// 		body: raw,
-	// 		redirect: 'follow'
-	// 	};
-
-	// 	fetch("http://localhost:8080/cs-con/customers", requestOptions)
-	// 		.then(response => response.text())
-	// 		.then(result => console.log(result))
-	// 		.catch(error => console.log('error', error));
-	// 	console.log(909090);
 	}
 </script>

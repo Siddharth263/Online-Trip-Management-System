@@ -39,16 +39,7 @@ public class TravelsServiceImpl implements TravelsService {
 	@Override
 	public Travels addTravels(Travels travel) throws TravelException {
 		// TODO Auto-generated method stub
-		List<Package> pkg = new ArrayList<>();
-		pkg = travel.getPkglist();
-		if(pkg.isEmpty()) {
-			throw new TravelException("No Packages are available for this travel");
-		}
-			for(Package pack : pkg) {
-				pack.getTravels().add(travel);
-				
-			}
-			Travels trav= travRepo.save(travel);
+		Travels trav= travRepo.save(travel);
 		
 		return trav;
 	}

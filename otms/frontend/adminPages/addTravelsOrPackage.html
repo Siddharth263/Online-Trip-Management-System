@@ -81,7 +81,7 @@
 		let phoneNumber = document.getElementById("phoneNumber").value;
 	
 
-		fetch("http://localhost:8080/bus", {
+		fetch("http://localhost:8080/addTravels", {
 		    method: "POST",
 		    headers: {
 		        "content-type": "application/json"
@@ -96,6 +96,7 @@
 		}).then(response => {
 		    response.json().then(data => {
 		        alert("travel sucessfully Added with ID: " + data.travelId);
+            window.location.reload();
 		    });
 		})
 
