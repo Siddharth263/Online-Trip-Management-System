@@ -100,6 +100,6 @@ The following Diagram depicts the flow of our Entity Relation Diagram to simplif
 
 ## API Root Endpoint
 
-`http://localhost:8888/`
+`http://localhost:8080/`
 
-`http://localhost:8888/swagger-ui/`
+`http://localhost:8080/swagger-ui/`
