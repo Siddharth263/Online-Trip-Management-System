@@ -36,8 +36,6 @@ Author - [@Priyanshu](https://github.com/Siddharth263)
 
 * [@Priyanshu](https://github.com/Siddharth263) -- Team Lead
 * [@Fehmida Shaikh](https://github.com/fehmida99)
-* [@Aman Kumar](https://github.com/Amanastel)
-* [@DikshaGaupale](https://github.com/DikshaGaupale)
   
 <!-- ============================================  TECH STACK ======================================================  -->
 
