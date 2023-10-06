@@ -43,7 +43,6 @@ Author - [@Priyanshu](https://github.com/Siddharth263)
 
 * Java
 * Spring Framework
-* Spring Security
 * Spring Boot
 * Spring Data JPA
 * Hibernate
